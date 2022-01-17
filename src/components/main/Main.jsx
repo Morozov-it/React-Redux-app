@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './main.css'
 import { useDispatch, useSelector } from "react-redux";
 import { getRepos } from '../../actions/repos';
@@ -12,22 +12,37 @@ const Main = () => {
     //хук для получения данных из store
     const repos = useSelector(state => state.repos.items);
     const isFetching = useSelector(state => state.repos.isFetching);
-    
+
+    //хук состояния компоненты для управляемого инпута
+    const [searchValue, setSearchValue] = useState('');
+
     //хук для выполнения сторонних эффектов (асинхронные запросы)
     useEffect(() => {
         dispatch(getRepos())
     }, [])
     
     //функция для вызова конкретного action
-    function onCount() {
-        dispatch()
+    function searchHandler() {
+        dispatch(getRepos(searchValue))
     };
+
+    //функция для контролируемого инпута
+    function onSearch(e) {
+        setSearchValue(e.target.value)
+    }
 
     return (
         <div className='main'>
             <div className="search">
-                <input type='text' placeholder='search...' className='search-input' />
-                <button className='search-btn'>search</button>
+                <input
+                    value={searchValue}
+                    onChange={onSearch}
+                    type='text'
+                    placeholder='search...'
+                    className='search-input' />
+                <button
+                    onClick={searchHandler}
+                    className='search-btn'>search</button>
             </div>
             {!isFetching ?
                 repos.map(repo => <Repo repo={repo} key={repo.id} />)

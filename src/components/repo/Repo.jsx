@@ -13,6 +13,7 @@ const Repo = (props) => {
                     {repo.stargazers_count}
                 </div>
             </div>
+            <div className="repo-description">{repo.description}</div>
             <div className="repo-language">{repo.language}</div>
             <div className="repo-avatar">
                 <img src={repo.owner.avatar_url} alt="" />
