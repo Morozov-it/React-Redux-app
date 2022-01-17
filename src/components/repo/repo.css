@@ -1,11 +1,11 @@
 .repo {
     padding: 10px;
-    margin: 5px 5px;
+    margin: 5px 0px;
     background: white;
     font-weight: 200;
     display: flex;
     flex-direction: column;
-    border: 2px solid rgb(189, 216, 238);
+    border: 2px solid rgb(23, 2, 139);
     border-radius: 5px;
 }
 .repo-header {

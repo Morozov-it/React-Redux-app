@@ -11,7 +11,8 @@ const Main = () => {
 
     //хук для получения данных из store
     const repos = useSelector(state => state.repos.items);
-
+    const isFetching = useSelector(state => state.repos.isFetching);
+    
     //хук для выполнения сторонних эффектов (асинхронные запросы)
     useEffect(() => {
         dispatch(getRepos())
@@ -24,9 +25,15 @@ const Main = () => {
 
     return (
         <div className='main'>
-            {repos.map(repo =>
-                <Repo repo={repo} key={repo.id} />
-            )}
+            <div className="search">
+                <input type='text' placeholder='search...' className='search-input' />
+                <button className='search-btn'>search</button>
+            </div>
+            {!isFetching ?
+                repos.map(repo => <Repo repo={repo} key={repo.id} />)
+                :   
+                <div className='fetching'></div>
+            }
         </div>
     )
 }
