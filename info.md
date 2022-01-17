@@ -38,3 +38,9 @@ npm install --save react react-dom
 
 # Создать функциональный компонент
 rafce
+
+# Установить redux
+npm install --save redux react-redux redux-thunk
+
+# Установить модуль для работы расширения в браузере Redux DevTools
+npm install --save redux-devtools-extension

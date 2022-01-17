@@ -17,6 +17,9 @@ module.exports = {
         new HTMLWebpackPlugin({ template: "./src/index.html" }),
         new CleanWebpackPlugin()
     ],
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     module: {
         rules: [
             {
