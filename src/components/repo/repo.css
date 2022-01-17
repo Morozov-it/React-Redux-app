@@ -7,6 +7,11 @@
     flex-direction: column;
     border: 2px solid rgb(23, 2, 139);
     border-radius: 5px;
+    
+}
+.repo-description {
+    flex: 0 0 50px;
+    overflow: auto;
 }
 .repo-header {
     display: flex;
