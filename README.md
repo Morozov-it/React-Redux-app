@@ -1,1 +1,1 @@
-# React-Redux-app
+# React-Redux-app via user's webpack config
