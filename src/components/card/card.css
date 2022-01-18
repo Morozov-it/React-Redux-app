@@ -1,0 +1,34 @@
+.card {
+    height: 100vh;
+    padding: 10px;
+    margin: 5px 0px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(23, 2, 139);
+    border-radius: 5px;
+}
+.card-description {
+    margin-top: 10px;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+.card-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.card-name__stars img{    
+    max-width: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.card-avatar img{
+    max-width: 100px;
+    border-radius: 50%;
+    display: block;
+}
+.card-btn {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}

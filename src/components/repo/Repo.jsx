@@ -9,7 +9,10 @@ const Repo = (props) => {
         <div className='repo'>
             <div className="repo-header">
                 <div className="repo-header__name">
-                    <NavLink to={'/card'}>{repo.name}</NavLink>
+                    <NavLink
+                        to={`/card/${repo.owner.login}/${repo.name}`}>
+                        {repo.name}
+                    </NavLink>
                 </div>
                 <div className="repo-header__stars">
                     <img src={star} alt="" />

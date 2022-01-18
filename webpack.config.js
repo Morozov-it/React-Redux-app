@@ -8,7 +8,8 @@ module.exports = {
     entry: ["@babel/polyfill", "./src/index.jsx"],//входной путь к файлу, с него начинается запуск приложения
     output: {
         path: path.resolve(__dirname, "dist"),//имя итоговой папки
-        filename: "[name].[hash].js"//для слежения сборщику за файлами
+        filename: "[name].[hash].js",//для слежения сборщику за файлами
+        publicPath: '/'//исключение проблем хеширования при передах
     },
     devServer: {
         port: 3000,
