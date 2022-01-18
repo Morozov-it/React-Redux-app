@@ -11,9 +11,14 @@ export const getRepos = (searchQuery = "stars:%3E1", currentPage, perPage) => {
         dispatch(setRepos(response.data));
         //console.log(response.data);
     }
-}
+};
 
 export const getCurrentRepo = async (username, repoName, setRepo) => {
     const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`);//выполнение кода последовательно
     setRepo(response.data);
+};
+
+export const getContributors = async (username, repoName, setContributors) => {
+    const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}/contributors?page=1&per_page=10`);//выполнение кода последовательно
+    setContributors(response.data);
 }
