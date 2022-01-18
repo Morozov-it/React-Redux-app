@@ -17,7 +17,8 @@ const Main = () => {
         isFetching: state.repos.isFetching,
         currentPage: state.repos.currentPage,
         perPage: state.repos.perPage,
-        totalCount: state.repos.totalCount
+        totalCount: state.repos.totalCount,
+        isFetchError: state.repos.isFetchError
     }));
 
     //вычисления для постраничного вывода репозиториев
@@ -53,6 +54,11 @@ const Main = () => {
                     onClick={searchHandler}
                     className='search-btn'>search</button>
             </div>
+            {repos.isFetchError &&
+            <div className="alert alert-danger" role="alert">
+                Occured some error!
+            </div>
+            }
             {!repos.isFetching ?
                 repos.items.map(repo => <Repo repo={repo} key={repo.id} />)
                 :   

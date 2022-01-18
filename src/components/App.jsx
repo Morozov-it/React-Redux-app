@@ -12,7 +12,7 @@ const App = () => {
                 <Route path="/" element={<Main />} />
                 <Route path="/card/:username/:reponame" element={<Card />} />
                 {/* редирект при некорректном URL */}
-                <Route path="*" element={<Main /> || <div>Page not found</div>} />
+                <Route path="*" element={<div>Page not found</div>} />
             </Routes>
         </div>
     </BrowserRouter>
