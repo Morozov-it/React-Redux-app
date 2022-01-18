@@ -36,16 +36,15 @@ const Main = () => {
     //функция для поиска
     function searchHandler() {
         dispatch(setCurrentPage(1));
-        dispatch(getRepos(searchValue));
+        dispatch(getRepos(searchValue, repos.currentPage, repos.perPage));
     };
-
 
     return (
         <div className='main'>
             <div className="search">
                 <input
                     value={searchValue}
-                    onChange={()=>setSearchValue(e.target.value)}
+                    onChange={(e)=>setSearchValue(e.target.value)}
                     autoFocus
                     type='text'
                     placeholder='search...'

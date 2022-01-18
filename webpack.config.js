@@ -11,7 +11,8 @@ module.exports = {
         filename: "[name].[hash].js"//для слежения сборщику за файлами
     },
     devServer: {
-        port: 3000
+        port: 3000,
+        historyApiFallback: true
     },//режим разработки в браузере
     plugins: [
         new HTMLWebpackPlugin({ template: "./src/index.html" }),

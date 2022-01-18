@@ -1,13 +1,16 @@
 import React from 'react';
 import './repo.css'
 import star from './../../assets/star.png'
+import { NavLink } from 'react-router-dom';
 
 const Repo = (props) => {
     const repo = props.repo;
     return (
         <div className='repo'>
             <div className="repo-header">
-                <div className="repo-header__name">{repo.name}</div>
+                <div className="repo-header__name">
+                    <NavLink to={'/card'}>{repo.name}</NavLink>
+                </div>
                 <div className="repo-header__stars">
                     <img src={star} alt="" />
                     {repo.stargazers_count}
